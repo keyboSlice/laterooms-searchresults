@@ -1,0 +1,25 @@
+{
+    "name": "laterooms-searchresults",
+    "version": "1.0.0",
+    "description": "Late Rooms code challenge",
+    "main": "index.js",
+    "scripts": {
+        "start": "webpack-dev-server --open"
+    },
+    "author": "Keir Lavelle",
+    "license": "ISC",
+    "devDependencies": {
+        "node-sass": "latest",
+        "webpack": "latest",
+        "webpack-dev-server": "latest",
+        "sass-loader": "latest",
+        "css-loader": "latest",
+        "style-loader": "latest",
+        "babel-core": "latest",
+        "babel-loader": "latest",
+        "babel-preset-stage-2": "^6.22.0",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-es2015-node6": "0.4.0",
+        "extract-text-webpack-plugin": "^2.0.0"
+    }
+}

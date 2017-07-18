@@ -1,0 +1,10 @@
+version: "2"
+services: 
+    webpack:
+      build:
+        context: .
+        dockerfile: ./containers/buildchain/Dockerfile
+      volumes:
+        - ./src:/project/src
+      ports:
+        - 80:80
