@@ -4,7 +4,8 @@
     "description": "Late Rooms code challenge",
     "main": "index.js",
     "scripts": {
-        "start": "webpack-dev-server --open"
+        "start": "webpack-dev-server --open",
+        "test": "ava ./src/tests/*.js"
     },
     "author": "Keir Lavelle",
     "license": "ISC",
@@ -17,11 +18,13 @@
         "style-loader": "latest",
         "babel-core": "latest",
         "babel-loader": "latest",
-        "babel-preset-stage-2": "latest",
+        "babel-preset-react": "latest",
         "babel-preset-es2015": "latest",
-        "babel-preset-es2015-node6": "latest",
-        "extract-text-webpack-plugin": "latest",
         "enzyme": "latest",
-        "ava": "latest"
+        "ava": "latest",
+        "react": "latest",
+        "react-addons-test-utils": "latest",
+        "react-dom": "latest",
+        "webpack-shell-plugin": "latest"
     }
 }
