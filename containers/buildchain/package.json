@@ -22,9 +22,12 @@
         "babel-preset-es2015": "latest",
         "enzyme": "latest",
         "ava": "latest",
+        "redux": "latest",
         "react": "latest",
         "react-addons-test-utils": "latest",
         "react-dom": "latest",
-        "webpack-shell-plugin": "latest"
+        "react-redux": "latest",
+        "webpack-shell-plugin": "latest",
+        "immutable": "latest"
     }
 }
