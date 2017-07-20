@@ -58,5 +58,3 @@ function hotelListReducer (state = initialState, action) {
 }
 
 export default createStore (hotelListReducer);
-
-
