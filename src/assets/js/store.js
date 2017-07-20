@@ -36,6 +36,9 @@ const initialState = fromJS ({
         } 
     ],
 
+    maximumPermissableStarRating: 5,
+    minimumPermissableStarRating: 0,
+
     filters: {
         minimumStarRating: 0,
         maximumStarRating: 0,

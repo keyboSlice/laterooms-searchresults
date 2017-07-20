@@ -1,6 +1,6 @@
 import test from "ava";
 import * as actions from "../assets/js/actions.js";
-import * as types from "../assets/js/action-types.js";
+import * as types   from "../assets/js/action-types.js";
 
 test ("Create an action to set the minimum star filter", t => {
 
