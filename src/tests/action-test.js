@@ -11,5 +11,5 @@ test ("Create an action to set the minimum star filter", t => {
         stars
     };
 
-    t.is (actions.setMinimumStarFilter (stars), expected);
+    t.deepEqual (actions.setMinimumStarFilter (stars), expected);
 });
