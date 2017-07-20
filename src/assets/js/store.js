@@ -70,6 +70,30 @@ export function hotelListReducer (state = initialState, action) {
             state = state.setIn (["filters", "minimumStarRating"], 0);
             return state.setIn (["filters", "maximumStarRating"], 0);
 
+        case types.SET_SORT_KEY:
+
+            return state.setIn (["sorting", "sortKey"], action.key);
+
+        case types.SET_SORT_DIRECTION:
+
+            return state.setIn (["sorting", "sortDirection"], action.direction);
+
+        case types.TOGGLE_FACILITY:
+
+            let facilities  = state.getIn (["filters", "facilities"]).toJS ();
+            let toggleIndex = facilities.indexOf (action.facility);
+
+            if (toggleIndex == -1) {
+
+                facilities.push (action.facility);
+            }
+            else {
+
+                facilities = facilities.splice (toggleIndex, 1);
+            }
+
+            return state.setIn (["filters", "facilities"], fromJS (facilities));
+
         default:
 
             return state;
