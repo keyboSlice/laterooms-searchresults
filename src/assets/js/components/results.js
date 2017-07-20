@@ -5,7 +5,6 @@ const mapStateToProps = state => {
 
     return {
 
-
     }
 }
 
@@ -13,18 +12,15 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
     return {
 
-        
+
     }
 }
 
-const Filters = () => (
-    <div className="filters">
+const Results = () => (
 
+    <div className="results">
 
     </div>
 )
 
-export default connect (
-    mapStateToProps,
-    mapDispatchToProps
-) (Filters);
+export default connect (mapStateToProps) (Results);

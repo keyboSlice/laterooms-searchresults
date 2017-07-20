@@ -1,5 +1,6 @@
 import React from "react";
 import Filters from "./filters.js";
+import Results from "./results.js";
 
 export default class SearchResults extends React.Component {
 
