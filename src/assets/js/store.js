@@ -1,5 +1,6 @@
 import { fromJS } from "immutable";
 import { createStore } from "redux";
+import * as types from "./action-types.js";
 
 const initialState = fromJS ({
 
@@ -54,7 +55,16 @@ const initialState = fromJS ({
 
 export function hotelListReducer (state = initialState, action) {
 
-    return state;
+    switch (action.type) {
+
+        case types.SET_MINIMUM_STAR_FILTER:
+
+            return state.setIn (["filters", "minimumStarRating"], action.stars);
+
+        default:
+
+            return state;
+    }
 }
 
 export default createStore (hotelListReducer);

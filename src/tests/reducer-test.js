@@ -4,6 +4,8 @@ import { fromJS } from "immutable";
 import { hotelListReducer } from "../assets/js/store.js";
 
 test ("Should handle SET_MINIMUM_STAR_FILTER", t => {
+
+    const stars = 3;
  
     const expected = fromJS ({
 
@@ -44,7 +46,7 @@ test ("Should handle SET_MINIMUM_STAR_FILTER", t => {
         minimumPermissableStarRating: 0,
 
         filters: {
-            minimumStarRating: 3,
+            minimumStarRating: stars,
             maximumStarRating: 0,
             facilities: [],
             characterSearch: ""
@@ -54,13 +56,16 @@ test ("Should handle SET_MINIMUM_STAR_FILTER", t => {
             sortKey: "",
             sortDirection: "asc"
         }
-    });
+
+    }).toJS ();
 
     t.deepEqual (
-        hotelListReducer ([], { 
+
+        hotelListReducer (undefined, {
             type: types.SET_MINIMUM_STAR_FILTER,
-            stars: 3
-        }),
+            stars
+        }).toJS (),
+
         expected
-    );    
+    );
 });
