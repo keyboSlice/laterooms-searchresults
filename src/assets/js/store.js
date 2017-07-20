@@ -52,7 +52,7 @@ const initialState = fromJS ({
     }
 });
 
-function hotelListReducer (state = initialState, action) {
+export function hotelListReducer (state = initialState, action) {
 
     return state;
 }
