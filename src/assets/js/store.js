@@ -61,6 +61,10 @@ export function hotelListReducer (state = initialState, action) {
 
             return state.setIn (["filters", "minimumStarRating"], action.stars);
 
+        case types.SET_MAXIMUM_STAR_FILTER:
+
+            return state.setIn (["filters", "maximumStarRating"], action.stars);
+
         default:
 
             return state;

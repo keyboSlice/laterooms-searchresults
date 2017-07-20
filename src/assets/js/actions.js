@@ -1,14 +1,28 @@
 import * as types from "./action-types.js";
+import { sandboxNumber } from "./helpers.js";
+import store from "./store.js";
 
 export function setMinimumStarFilter (stars) {
 
+    let sandboxedStars = sandboxNumber (
+        store.getState ().get ("minimumPermissableStarRating"),
+        store.getState ().get ("maximumPermissableStarRating"),
+        stars
+    );
+
     return {
         type: types.SET_MINIMUM_STAR_FILTER,
-        stars
+        stars: sandboxedStars
     };
 }
 
 export function setMaximumStarFilter (stars) {
+
+    let sandboxedStars = sandboxNumber (
+        store.getState ().get ("minimumPermissableStarRating"),
+        store.getState ().get ("maximumPermissableStarRating"),
+        stars
+    );
 
     return {
         type: types.SET_MAXIMUM_STAR_FILTER,
