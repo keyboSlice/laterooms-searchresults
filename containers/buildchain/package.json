@@ -28,6 +28,7 @@
         "react-addons-test-utils": "latest",
         "react-dom": "latest",
         "react-redux": "latest",
+        "rc-slider": "latest",
         "webpack-shell-plugin": "latest",
         "immutable": "latest"
     },
