@@ -7,7 +7,7 @@ export default class SearchResults extends React.Component {
     render () {
 
         return (
-            <main className="page-wrapper">
+            <main className="page__wrapper">
                 <Filters />
                 <Results />
             </main> 

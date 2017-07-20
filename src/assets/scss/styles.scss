@@ -1,7 +1,14 @@
+@import "variables";
+@import "fonts";
+
 @import "vendor/normalize";
+@import "vendor/rc-slider";
+@import "mixins/respond";
 
 body {
-    background-color: #ebeced;
+    background-color: lighten($color-highlight-one, 10%);
 }
 
-@import "components/page-wrapper";
+@import "components/page";
+@import "components/filters";
+@import "components/stars";

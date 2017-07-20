@@ -1,0 +1,26 @@
+.stars__wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.stars {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stars__star {
+
+    color: rgba(0, 0, 0, .3);
+    transition: .3s color, .3s transform;
+
+    &--active {
+        color: $color-highlight-two;
+        transform: scale(1.2);
+    }
+}
+
+.stars__slider {
+
+    margin-top: 15px;
+}
