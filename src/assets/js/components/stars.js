@@ -18,7 +18,7 @@ export default class Stars extends React.Component {
 
                 <div className="stars">
 
-                    { [...Array (maxStars).keys ()].map ((star, i) => {
+                    { [...Array (maxStars).keys ()].map (i => {
 
                         let className = ((maxStars == 0) || (i >= starsLow && i+1 <= starsHigh))
                             ? "stars__star stars__star--active"

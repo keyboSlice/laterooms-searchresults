@@ -1,5 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
+import NoResults from "./no-results.js";
+import Result from "./result.js";
 
 const mapStateToProps = state => {
 
@@ -25,10 +27,20 @@ const mapStateToProps = state => {
             }
 
             return valid;
+
+        }).sort ((a, b) => {
+
+            let sortKey = state.getIn (["sorting", "sortKey"]);
+            let sortDir = state.getIn (["sorting", "sortDirection"]);
+
+            if (! sortKey.length || sortKey == "Name") { return sortDir == "asc" ? -1 : 1; }
+
+            return sortDir == "asc"
+                ? a [sortKey] - b [sortKey]
+                : b [sortKey] - a [sortKey];
         }),
 
-        minimumStarRating: state.getIn (["filters", "minimumStarRating"]),
-        maximumStarRating: state.getIn (["filters", "maximumStarRating"])      
+        maxStars: state.get ("maximumPermissableStarRating")      
     };
 };
 
@@ -44,19 +56,13 @@ class Results extends React.Component {
     render () {
 
         let {
-            minimumStarRating,
-            maximumStarRating,
+            maxStars,
             hotels
         } = this.props;
 
         let resultsContent = hotels.length 
-            ? "foo"
-            : <div className="results__no-results page__component">
-                <h1 className="results__no-results-title">
-                    <i className="fa fa-frown-o"></i>
-                    Sorry!<br />No results matched your search
-                </h1>
-            </div>
+            ? hotels.map ((h, i) => <Result maxStars={ maxStars } hotel={ h } key={ i } />)
+            : <NoResults />;
 
         return (
 

@@ -1,10 +1,6 @@
 .filters {
 
-    max-width: 300px;
-
-    .filters__main-title {
-        
-    }
+    width: 300px;
 
     .filters__block {
 
@@ -17,5 +13,22 @@
         font-family: $font-heading;
         font-size: 16px;
         color: $color-highlight-one;
+    }
+
+    .filters__sort-select {
+
+        border: 1px solid rgba(0, 0, 0, .1);
+        margin: 0;
+        padding: 5px;
+        font-size: 12px;
+        font-weight: bold;
+        font-family: $font-heading;
+        text-transform: uppercase;
+    }
+
+    .filters__sort-wrapper {
+
+        display: flex;
+        justify-content: space-between;
     }
 }

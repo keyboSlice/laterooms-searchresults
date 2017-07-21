@@ -1,0 +1,19 @@
+.sort-button {
+
+    display: inline-block;
+    padding: 6px 10px;
+    color: #fff;
+    font-family: $font-heading;
+    font-weight: bold;
+    font-size: 12px;
+    background-color: $color-highlight-two;
+    cursor: pointer;
+    margin-left: 5px;
+    border-radius: 4px;
+    transition: .3s background-color;
+
+    &--active, &:hover {
+
+        background-color: darken($color-highlight-two, 15%);
+    }
+}
