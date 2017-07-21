@@ -8,3 +8,5 @@ export const SET_SORT_DIRECTION      = "set_sort_direction";
 export const TOGGLE_FACILITY         = "toggle_facility";
 export const SELECT_ALL_FACILITIES   = "select_all_facilities";
 export const DESELECT_ALL_FACILITIES = "deselect_all_facilities";
+
+export const TOGGLE_FILTERS = "TOGGLE_FILTERS";

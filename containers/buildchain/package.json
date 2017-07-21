@@ -30,7 +30,9 @@
         "react-redux": "latest",
         "rc-slider": "latest",
         "webpack-shell-plugin": "latest",
-        "immutable": "latest"
+        "immutable": "latest",
+        "react-motion": "latest",
+        "react-collapse": "latest"
     },
     "babel": {
         "presets": ["es2015", "react"]

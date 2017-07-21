@@ -50,6 +50,10 @@ const initialState = fromJS ({
     sorting: {
         sortKey: "",
         sortDirection: "asc"
+    },
+
+    ui: {
+        filtersOpen: false
     }
 });
 
@@ -93,6 +97,10 @@ export function hotelListReducer (state = initialState, action) {
             }
 
             return state.setIn (["filters", "facilities"], fromJS (facilities));
+
+        case types.TOGGLE_FILTERS:
+
+            return state.setIn (["ui", "filtersOpen"], ! state.getIn (["ui", "filtersOpen"]));
 
         default:
 

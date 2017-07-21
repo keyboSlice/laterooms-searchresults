@@ -6,6 +6,13 @@
     max-width: $wide-desktop;
     padding: 15px;
     display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    @include respond($tablet) {
+
+        flex-direction: row;
+    }
 }
 
 .page__component {

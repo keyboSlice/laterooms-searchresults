@@ -74,3 +74,10 @@ export function deselectAllFacilities () {
         type: types.DESELECT_ALL_FACILITIES
     };
 }
+
+export function toggleFilters () {
+
+    return {
+        type: types.TOGGLE_FILTERS
+    };
+}

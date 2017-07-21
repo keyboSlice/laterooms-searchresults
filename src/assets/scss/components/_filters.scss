@@ -1,6 +1,10 @@
 .filters {
 
-    width: 300px;
+    @include respond($tablet) {
+        width: 300px;
+    }
+
+    margin-bottom: 15px;
 
     .filters__block {
 
@@ -30,5 +34,22 @@
 
         display: flex;
         justify-content: space-between;
+    }
+
+    .filters__collapse-button {
+
+        display: block;
+        padding: 6px 10px;
+        color: #fff;
+        font-family: $font-heading;
+        font-weight: bold;
+        font-size: 16px;
+        background-color: $color-highlight-two;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: .3s background-color;
+        text-align: center;
+        width: calc(100% - 20px);
+        margin-bottom: 15px;
     }
 }

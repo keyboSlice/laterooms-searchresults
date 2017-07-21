@@ -1,9 +1,12 @@
 .results {
 
-    margin-left: 15px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+
+    @include respond($tablet) {
+        margin-left: 15px;
+    }
 }
 
 .results__no-results-title {

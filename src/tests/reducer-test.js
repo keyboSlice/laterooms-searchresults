@@ -55,6 +55,10 @@ test ("Should handle SET_MINIMUM_STAR_FILTER", t => {
         sorting: {
             sortKey: "",
             sortDirection: "asc"
+        },
+
+        ui: {
+            filtersOpen: false
         }
 
     }).toJS ();
@@ -122,6 +126,10 @@ test ("Should handle SET_MAXIMUM_STAR_FILTER", t => {
         sorting: {
             sortKey: "",
             sortDirection: "asc"
+        },
+
+        ui: {
+            filtersOpen: false
         }
 
     }).toJS ();
@@ -187,6 +195,10 @@ test ("Should handle CLEAR_STAR_FILTERS", t => {
         sorting: {
             sortKey: "",
             sortDirection: "asc"
+        },
+
+        ui: {
+            filtersOpen: false
         }
 
     }).toJS ();
@@ -253,6 +265,10 @@ test ("Should handle SET_SORT_KEY", t => {
         sorting: {
             sortKey: key,
             sortDirection: "asc"
+        },
+
+        ui: {
+            filtersOpen: false
         }
 
     }).toJS ();
@@ -320,6 +336,10 @@ test ("Should handle SET_SORT_DIRECTION", t => {
         sorting: {
             sortKey: "",
             sortDirection: direction
+        },
+
+        ui: {
+            filtersOpen: false
         }
 
     }).toJS ();
@@ -387,6 +407,10 @@ test ("Should add a facility to the selected facilities array", t => {
         sorting: {
             sortKey: "",
             sortDirection: "asc"
+        },
+
+        ui: {
+            filtersOpen: false
         }
 
     }).toJS ();
