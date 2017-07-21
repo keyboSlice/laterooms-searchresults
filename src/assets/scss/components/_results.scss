@@ -1,0 +1,19 @@
+.results {
+
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.results__no-results-title {
+
+    font-family: $font-heading;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    i {
+        color: $color-highlight-two;
+        font-size: 3em;
+    }
+}
