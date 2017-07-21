@@ -89,7 +89,7 @@ export function hotelListReducer (state = initialState, action) {
             }
             else {
 
-                facilities = facilities.splice (toggleIndex, 1);
+                facilities.splice (toggleIndex, 1);
             }
 
             return state.setIn (["filters", "facilities"], fromJS (facilities));

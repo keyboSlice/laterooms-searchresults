@@ -2,9 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import { 
     setMinimumStarFilter,
-    setMaximumStarFilter 
+    setMaximumStarFilter,
+    toggleFacility
 } from "../actions.js";
 import Stars from "./stars.js";
+import Facilities from "./facilities.js";
 
 const mapStateToProps = state => {
 
@@ -12,7 +14,14 @@ const mapStateToProps = state => {
         minStars: state.get ("minimumPermissableStarRating"),
         maxStars: state.get ("maximumPermissableStarRating"),
         starsLow: state.getIn (["filters", "minimumStarRating"]),
-        starsHigh: state.getIn (["filters", "maximumStarRating"])
+        starsHigh: state.getIn (["filters", "maximumStarRating"]),
+        facilities: [... new Set (
+            state.get ("hotels").toJS ()
+                .map (h => h.Facilities)
+                .reduce ((a, b) => a.concat(b))
+            )
+        ],
+        activeFacilities: state.getIn (["filters", "facilities"])
     };
 };
 
@@ -22,20 +31,27 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         onStarSliderChange (values) {
             dispatch (setMinimumStarFilter (values [0]));
             dispatch (setMaximumStarFilter (values [1]));
+        },
+
+        onFacilityClick (facility) {
+            dispatch (toggleFacility (facility));
         }
     };
 };
 
 class Filters extends React.Component {
 
-    render () {        
+    render () { 
 
         let { 
             minStars, 
             maxStars,
             starsLow,
             starsHigh,
-            onStarSliderChange } = this.props;
+            onStarSliderChange,
+            facilities,
+            activeFacilities,
+            onFacilityClick } = this.props;
 
         return  (
             <div className="filters page__component">
@@ -55,7 +71,12 @@ class Filters extends React.Component {
 
                 <div className="filters__block filters__block--facilities-container">
 
-                    <h2 className="filters__block-title">Facilities</h2>
+                    <h2 className="filters__block-title">Facilities</h2>   
+
+                    <Facilities
+                        facilities={ facilities }
+                        activeFacilities={ activeFacilities }
+                        onFacilityClick={ onFacilityClick } />
 
                 </div>
             </div>
